@@ -1,0 +1,668 @@
+body{
+    margin: 0px 0px ;
+    padding: 0px 0px;
+    border: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align:left;
+    color: black;
+    line-height: 30px;
+}
+.container{
+    max-width: 1170px;
+    margin: 0px auto;
+    padding: 0px 0px;
+}
+.nav-container {
+    max-width: 1900px;
+    margin: 0px auto;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+
+
+
+
+
+
+
+h1 b {
+    border-bottom: 2px solid black;
+    color: black;
+    font-weight: inherit;
+}
+.nav {
+    padding: 10px 0px;
+    font-size: 30px;
+}
+.logo {
+    float: left;
+    padding: 20px 40px;
+}
+.login {
+    float: right;
+    padding: 20px 60px;
+}
+.logo img {
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+.login a > :nth-child(n) {
+    float: right;
+    width: 80px;
+}
+nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    color: white;
+}
+.logo span {
+    padding: 0px 10px;
+    font-weight: bold;
+}
+.login a {
+    float: right;
+    width: 80px;
+    text-align: right;
+    margin: 0px 0px;
+}
+.login a p {
+    margin: 0px;
+}
+header {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 0px 112px 0px;
+    position: relative;
+}
+.slider {
+    position: relative;
+}
+.one, .two, .three {
+    padding: 50px 0px;
+}
+.one {
+    position: relative;
+}
+.sub-slider .header-text {
+    width: 60%;
+    float: left;
+    color: white;
+    margin: 100px 0px;
+}
+.sub-slider .header-img {
+    width: 40%;
+    float: right;
+}
+.sub-slider .header-text h1 {
+    font-size: 100px;
+    color: #30f7fe;
+    margin: 50px 0px;
+}
+.sub-slider .header-text h3{
+    font-size: 32px;
+    margin: 0px;
+}
+.header-text span {
+    margin: 70px 0px;
+    display: block;
+    font-size: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.services-img .purple{
+    display: none;
+}
+.sub-services:hover .services-img .gray{
+display: none;
+}
+.sub-services:hover .services-img .purple{
+display: block;
+}
+.sub-services:hover .services-text h3{
+    color: #582fd7;
+}
+
+.services-img {
+    width: 25%;
+    margin: 0px auto;
+}
+.one {
+    text-align: center;
+}
+.one .button {
+    padding: 15px 35px;
+    background-color: #582fd7;
+    border-radius: 30px;
+    box-sizing: border-box;
+    display: block;
+    width: 200px;
+    margin: 50px auto 40px auto;
+}
+.one .head h1{
+    font-size: 50px;
+    margin: 70px 0px;
+}
+.one .head{
+    position: absolute;
+    top: -140px;
+    left: 430px;
+}
+.sub-services {
+    width: 29%;
+    float: left;
+    margin: 0px 76px 0px 0px;
+}
+.sub-services:nth-child(3){
+    margin-right: 0px;
+}
+.laptop-img {
+    width: 45%;
+    float: left;
+}
+.features {
+    width: 48%;
+    float: right;
+}
+.features h1{
+    font-size: 50px;
+    margin: 180px 0px 30px 0px;
+}
+section.analytics {
+    padding: 0px 0px 150px 0px;
+    position: relative;
+}
+.sub-analyses {
+    width: 31.7%;
+    float: left;
+    margin: 0px 28px 0px 0px;
+}
+.analyses-text h3 {
+    font-size: 28px;
+}
+.sub-analyses:nth-child(3){
+    margin-right: 0px;
+}
+.analyses-img {
+    box-shadow: 0px 0px 20px 0px #e0e0e08c;
+}
+.sub-analyses:hover .analyses-img{
+    /* box-shadow: 0px 0px 20px 0px #c9c9c9b8; */
+    box-shadow: 0 16px 32px 0 rgb(7,28,31,0.1);
+}
+.three .head h1{
+    text-align: left;
+    font-size: 50px;
+    margin: 70px 0px 130px 0px;
+}
+.analyses-text p {
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+section.team {
+    background-color: #f7f7f7;
+    padding: 100px 0px 95px 0px;
+}
+.div b {
+    color: #582fd7;
+    display: block;
+}
+section.team h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0px 0px 100px 0px;
+}
+.team-mate {
+    position: relative;
+}
+.div p {
+    margin: 25px 0px;
+}
+
+
+
+
+
+
+
+section.section-testimony {
+    background-color: #fdfeff;
+    padding: 50px 0px 100px 0px;
+}
+.section-testimony h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 92px auto 93px auto;
+}
+.head-testimony {
+    width: 100%;
+}
+.testimony {
+    width: 30%;
+    padding: 20px 15px 20px 50px;
+    box-shadow: 0px 0px 20px 0px #e0e0e08c;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 58px;
+    position: relative;
+    font-size: 18px !important;
+    line-height: 26px;
+}
+.testimony:nth-child(3){
+    margin-right: 0px;
+}
+.testimony b {
+    display: block;
+    width: 30%;
+    /* margin: 10px 0px; */
+    float: left;
+    font-size: 22px;
+}
+.testimony span {
+    /* display: block; */
+    width: 30%;
+    /* margin: 10px 0px; */
+    float: right;
+    /* font-size: 25px; */
+}
+.testimony .girl {
+    width: 71px;
+    position: absolute;
+    left: -35px;
+    bottom: -10px;
+}
+
+
+
+
+.form-map{
+    /* background-color: #582fd7; */
+}
+iframe {
+    width: 49vw;
+    max-height: 594px;
+    height: 100%
+}
+.form {
+    position: relative;
+    width: 50%;
+    float: left;
+    padding: 10px 0px;
+}
+.map {
+    width: 50%;
+    float: left;
+}
+.input-div {
+    /* background-color: #582fd7;
+    float: right; */
+    width: 100%;
+    color: white;
+}
+.input-div h3 {
+    font-size: 50px;
+}
+input[type="text"]{
+    width: 90%;
+    font-size: 20px;
+    border-bottom: 2px solid white;
+    background-color: #582fd7;
+    outline: none;
+    border-width: 0px 0px 2px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    margin: 25px 0px 0px 0px;
+}
+::placeholder {
+    color: #ffffff;
+  }
+  input[type="email"]::placeholder {
+    color: #7a7979;
+  }
+  .send a {
+    padding: 10px 35px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 17px;
+}
+.send {
+    margin: 70px 0px;
+}
+
+
+
+
+
+
+i.fas,i.far {
+    float: left;
+    width: 7%;
+}
+i.fab {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 5px;
+}
+i.fab.fa-facebook-f {
+    padding: 10px 13px;
+}
+.footer-details h3 {
+    margin: 25px 0px;
+    font-size: 40px;
+}
+.footer-subdiv {
+    margin: 10px 0px;
+    width: 100%;
+}
+.footer-details p {
+    margin: 0px 0px;
+    padding: 0px 25px 0px 0px;
+    font-size: 15px;
+    line-height: 25px;
+}
+.footer-subdiv p {
+    width: 60%;
+    float: left;
+}
+.footer-details {
+    width: 30%;
+    float: left;
+    padding: 50px 0px;
+    margin-right: 3.8%;
+}
+.footer-details:nth-child(3) {
+    margin-right: 0%;
+    text-align: right;
+    position: relative;
+}
+.footer-media {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.footer-content {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+.footer-contact {
+    text-align: center;
+}
+.footer-subdiv p {
+    padding: 0px 0px;
+}
+.footer-contact p {
+    margin: 10px 0px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+input[type="email"] {
+    font-size: 18px;
+    padding: 6px;
+    margin: 40px 0px 40px 0px;
+    outline: none;
+}
+a.button {
+    padding: 8.5px;
+    background-color: #582fd7;
+}
+img {
+    width: 49vw;
+}
+
+
+
+
+
+.form:after {
+    right: 0px;
+  }
+  .form:after {
+    content: "";
+    height: 100%;
+    background: #582fd7;
+    position: absolute;
+    top: 0px;
+    width: 50vw;
+    right: 0px;
+    z-index: -1;
+  }
+  *::after {
+    margin: 0;
+    padding: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+
+
+h1{
+  font-weight: 400;
+}
+
+
+
+
+* {box-sizing: border-box}
+   
+.myteam {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: #dad9d7;
+color: black;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.myteam{
+display:flex;
+}
+.div {
+    float: left;
+    width: 31.4%;
+    box-sizing: border-box;
+    /* padding: 70px; */
+    text-align: center;
+    margin-right: 33px;
+}
+img {
+    width: 100%;
+}
+.images {
+    margin: 0px auto;
+}
+.images > :nth-child(3){
+    margin-right: 0px !important;
+}
+.control {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    background-color: #582fd7;
+    bottom: 270px;
+    border-radius: 89px;
+}
+.prev.control {
+    left: -160px;
+
+    padding: 20px 30px 20px 25px;
+}
+.next.control {
+    right: -160px;
+    padding: 20px 25px 20px 30px;
+}
+
+
+
+
+
+
+
+.dot1 {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #582fd7;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .testimonyDot{
+     height: 20px;
+    width: 20px;
+      background-color: white;
+      border: 6px solid #d7d7d7;
+      transform: translateY(2px);
+  }
+  .testimony-Dot {
+      float: left;
+      margin: 70px 0px;
+  }
+
+
+
+
+
+  .sub-slider {display:none;}
+
+  .header-left,.header-right {
+    position: absolute;
+    top: 230px;
+    border-radius: 89px;
+    cursor: pointer;
+    transition: 0.6s ease;
+    border: none;
+    font-size: 25px;
+}
+
+.header-left{
+  left: -170px;
+  padding: 5px 20px 10px 15px;
+}
+
+.header-right{
+  right: -170px;
+  padding: 5px 15px 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+jpmachado.art	TRUE	/	FALSE	1999999999	PHPSESSID	5d4dda95161b759e83dd768861c8975c
+

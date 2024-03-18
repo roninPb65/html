@@ -1,0 +1,443 @@
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/59a01282be.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belgrano&family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/font/stylesheet.css">
+    <style>
+
+.splash{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+    z-index: 200;
+    color: #111111;
+    text-align: center;
+    /* line-height: 90vh; */
+}
+.type-img {
+  padding: 0px 55% 0px 0px;
+}
+.display-none{
+  position: fixed;
+ display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+    z-index: 200;
+    color: #111111;
+    text-align: center;
+    /* line-height: 90vh; */
+ transition: all 0.5s;
+}
+
+@keyframes fadeIn{
+  to{
+    display: block;
+  }
+}
+
+.fade-in{
+  display: inline;
+  animation: fadeIn 1s ease-in forwards;
+  width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.sub-splash{
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+
+        .reveal{
+          position: relative;
+          transform: translateY(150px);
+          opacity: 0;
+          transition: 1s all ease;
+        }
+        
+        .reveal.active{
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .wraper {
+    display: flex;
+    flex-direction: column;
+}
+/* header{
+    order: 2;
+}
+        .banner{
+            order: 4;
+        }
+        .analytics{
+            order: 3;
+        }
+        .slash-back{
+            order: 7;
+        }
+        .team{
+            order: 5;
+        }
+        .interest-a{
+            order: 1;
+        }
+        footer{
+            order: 6;
+        } */
+            </style>
+</head>
+<body>
+    <div class="splash">
+        <div class="sub-splash">
+        <img class="Fade-in" src="assets/images/load.gif"/>
+    </div>
+    </div>
+    <div class="wraper">
+<header>
+            <nav>
+                <div class="nav-content clearfix">
+                    <div class="left-nav">
+                        <div class="logo">
+                            <img src="assets/images/logo.png">
+                        </div>
+                        <div class="nav-button">
+                            <a href="#" class="nav-a">Home</a>
+                            <a href="#" class="nav-a">Service</a>
+                            <a href="#" class="nav-a">About</a>
+                            <a href="#" class="nav-a">Contact Us</a>
+                        </div>
+                    
+                    </div>
+                    <div class="right-nav">
+                  
+                        <div class="nav-button">
+                            <a href="#" class="nav-a">Login</a>
+                            <a href="#" class="nav-a"><i class="fas fa-search" aria-hidden="true"></i></a>
+                            <a href="#" class="nav-a"><span><i class="fas fa-phone-alt" aria-hidden="true"></i><h5>Call : +01 1234567890</h5></span></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+</header>
+
+    <section class="banner">
+        <div class="container">
+    <div class="header-slider">
+        
+    
+     <div class="slider">
+         <div class="sub-slider clearfix">
+             <div class="header-text">
+                 <h1>Full Service</h1>
+                 <h3>SEO Marketing</h3>
+                 <p id="banner-p">anything embarrassing hidden in the middle of text. Lorem Ipsum is not simply random text 
+                     Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+                     <div class="banner-button">
+                         <a href="#" class="button" style="padding: 20px 95px;">Read more</a>
+                         <a href="#" class="button" id="banner-button2" style="padding: 20px 95px;">Contact Us</a>
+                         </div>
+                     
+             </div>
+             <div class="header-img">
+                 <img src="assets/images/computer.png"/>
+             </div>
+         </div>
+         <div class="sub-slider clearfix">
+           <div class="header-text">
+               <h1>MS word</h1>
+               <h3>SEO Marketing</h3>
+               <p id="banner-p">anything embarrassing hidden in the middle of text. Lorem Ipsum is not simply random text 
+                   Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+                   <div class="banner-button">
+                     <a href="#" class="button" style="padding: 20px 95px;">Read more</a>
+                     <a href="#" class="button" id="banner-button2" style="padding: 20px 95px;">Contact Us</a>
+                     </div>
+                   
+           </div>
+           <div class="header-img">
+               <img src="assets/images/laptop.png"/>
+           </div>
+       </div>
+         <div class="sub-slider clearfix">
+           <div class="header-text">
+               <h1>Slideshow</h1>
+               <h3>SEO Marketing</h3>
+                 <p id="banner-p">anything embarrassing hidden in the middle of text. Lorem Ipsum is not simply random text 
+                     Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+                     <div class="banner-button">
+                         <a href="#" class="button" style="padding: 20px 95px;">Read more</a>
+                         <a href="#" class="button" id="banner-button2" style="padding: 20px 95px;">Contact Us</a>
+                         </div>
+                   
+           </div>
+           <div class="header-img">
+               <img src="assets/images/business-analiticsLady.jpg"/>
+           </div>
+       </div>
+         <button class="header-left" onclick="plusDivs(-1)">&#10094;</button>
+   <button class="header-right" onclick="plusDivs(1)">&#10095;</button>
+     </div>
+ </div>
+    </div>
+</section>
+    <section class="analytics">
+        <div class="container">
+            <div class="two clearfix   ">
+                <div class="side-bar">
+                    <div class="laptop-img seo-img" >
+                                    <img id="two-analyst" src="assets/images/laptop.png">
+                                </div>
+                                <div class="features seo-text" >
+                                            
+                                    <h4>About </h4>
+                                                <h1>Grow Your Business<br> with Our Company</h1>
+                                                <p>
+                                                    simply dummy text of the printing and typesetting industry
+                                                    simply dummy text of the printing and typesetting industry
+                                                    simply dummy text of the printing and typesetting industry
+                                                    simply dummy text of the printing and typesetting industry
+                                                    simply dummy text of the 
+                                                </p>
+                                                <div class="growth-button">
+                                                <a href="#" class="button" id="banner-button2">Read more</a></div>
+                                            </div></div>
+            </div>
+            <div class="three">
+            <div class="head"><h2>Services</h2><h3 class="three-h3">Business</h3></div>
+            <div class="product02 portfolio-gallery   ">
+                <div class=" product-image" data-id="Web"><div class="gap">
+                    <div class="display"><img class="icon-img" src="assets/images/speaker.png"></div>
+                    <div class="text-three"><h3>Content Marketing </h3><p>generators on the Internet tend to repeat predefined chunks as necessary</p></div> 
+                </div></div>
+
+                <div class="product-image" data-id="Branding"><div class="gap">
+                    <div class="display"><img class="icon-img" src="assets/images/system.png"></div>
+                    <div class="text-three"><h3>SEO Optimization </h3><p>generators on the Internet tend to repeat predefined chunks as necessary</p></div>
+                </div></div>
+
+                <div class="product-image" data-id="Photography"><div class="gap ppc">
+                    <div class="display ppc-img"><img class="icon-img" src="assets/images/time.png"></div>
+                    <div class="text-three"><h3>PPC Advertising </h3><p>generators on the Internet tend to repeat predefined chunks as necessary</p></div>
+                    <div class="ppc-button"><a href="#" class="button" id="banner-button2">Read more</a></div>
+                </div></div>
+           
+                <div class="product-image" data-id="Photography"><div class="gap">
+                    <div class="display"><img class="icon-img" src="assets/images/application.png"></div>
+                <div class="text-three"><h3>App Development </h3><p>generators on the Internet tend to repeat predefined chunks as necessary</p></div>
+                </div></div>
+                <div class="product-image" data-id="Photography"><div class="gap">
+                    <div class="display"><img class="icon-img" src="assets/images/globe.png"></div>
+                <div class="text-three"><h3>Social Marketing </h3><p>generators on the Internet tend to repeat predefined chunks as necessary</p></div>
+                </div></div>
+            </div>
+
+            </div>
+        </div>
+        
+    </section>
+    <section class="analytics slash-back">
+        <div class="container  ">
+            <div class="two clearfix pie-chart">
+                <div class="laptop-img quality-traffic">
+                    <div class="subquality-traffic">
+                    <img src="assets/images/business-analiticsLady.jpg">
+                </div>
+                </div>
+                <div class="features ">
+                   
+                    <h1>Pay for Qualified Traffic </h1>
+                    <p>simply dummy text of the printing and typesetting industry
+                        simply dummy text of the printing and typesetting industry
+                        simply dummy text of the printing and typesetting.
+                    </p>
+                <div class="traffic">
+                    <a href="#" class="button pie-button" id="banner-button2">Read more</a></div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    <section class="team">
+    
+   
+    <div class="container  ">
+      <div class="team-mate">
+        <h1>Testimonial</h1>
+            <p>even slightly believable. If you are going to use a passage of Lorem ipsum dolor</p>
+        <div class="myteam fade">
+          
+          <div class="images clearfix">
+            <div class="testimony">
+                <h2>JACK MORK</h2>
+                <p>
+                1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                <br><i class="fas fa-quote-left"></i></p>
+             
+             </div>
+              </div>
+          
+        </div>
+        
+        <div class="myteam fade">
+         
+          <div class="images clearfix">
+            <div class="testimony">
+                <h2>JACK MORK</h2>
+                <p>
+                2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                <br><i class="fas fa-quote-left"></i></p>
+             
+             </div>
+              </div>
+          
+        </div>
+        
+        <div class="myteam fade">
+         
+         <div class="images clearfix">
+            <div class="testimony">
+                <h2>JACK MORK</h2>
+                <p>
+                3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doconsectetur adipiscing elit
+                <br><i class="fas fa-quote-left"></i></p>
+             
+             </div>
+              </div>
+        </div>
+        
+        <a class="prev control" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next control" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+        </div>
+       
+    </section>
+    <section class="interest-a">
+        <div class="intrested ">
+            <div class="container clearfix  ">
+            <div class="subscribe">
+            <h2>GET IN TOUCH</h2>
+                <input class="footer-input" type="text" placeholder="Your Name">
+                <input class="footer-input" type="email" placeholder="Your Email">
+                <input class="footer-input" type="number" placeholder="Your Phone">
+                <!-- <input class="footer-input" type="text" placeholder="Message"> -->
+                <textarea class="footer-input textarea-form" rows="2" placeholder="Message"></textarea>
+                <div class="touch-button"> 
+                <a href="#" class="button " id="footer-bt">SEND</a></div>
+            </div>
+            <div class="newsletter">
+                <h2>Newsletter</h2>
+                <p>the majority have suffered alteration in some form, by injected 
+                    humor or randomize word which don't.
+                </p>
+                <input class="footer-input" type="email" placeholder="Enter your email">
+                <div class="news-button">
+                <a href="#" class="button" id="footer-bt2">SUBSCRIBE NOW</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer>
+    
+        <div class="footer">
+            <div class="footer-box clearfix  ">
+        <div class="footer-details">
+            <i class="fas fa-map-marker-alt"></i><br>
+            <h3> Address </h3><p>Location</p>
+        </div>
+        <div class="footer-details">
+            <i class="fas fa-phone-alt"></i><br>
+            <h3>Phone </h3><p>+01 1234567890</p>
+        </div>
+        <div class="footer-details">
+            <i class="fas fa-envelope"></i><br>
+            <h3> Email</h3><p>demo@gmail.com</p>
+        </div>
+        </div>
+    
+    <div class="footer-button clearfix">
+        <a href="#" class="nav-a foot-nav">Home</a>
+        <a href="#" class="nav-a foot-nav">Service</a>
+        <a href="#" class="nav-a foot-nav">About</a>
+        <a href="#" class="nav-a foot-nav">Contact Us</a>
+    </div>
+    <div class="social-button clearfix">
+        <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-linkedin-in"></i></a>
+        
+    </div> 
+    <div class="footer-contact">
+        <div class="container ">
+   <p> © 2021 All Rights Reserved. Design by Free html Templates </p>
+   </div>
+    </div>
+</div>
+</footer>
+</div>
+
+
+ <script>
+        const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded', (e)=>{
+  
+  setTimeout(()=>{
+      splash.classList.add('display-none');
+      console.log("hello");
+  },2000);
+})
+    </script>
+
+   
+</body>
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script>
+    function reveal() {
+     var reveals = document.querySelectorAll(".reveal");
+   
+     for (var i = 0; i < reveals.length; i++) {
+       var windowHeight = window.innerHeight;
+       var elementTop = reveals[i].getBoundingClientRect().top;
+       var elementVisible = 150;
+   
+       if (elementTop < windowHeight - elementVisible) {
+         reveals[i].classList.add("active");
+       } else {
+         reveals[i].classList.remove("active");
+       }
+     }
+   }
+   
+   window.addEventListener("scroll", reveal);
+   </script>
+</html>

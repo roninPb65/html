@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/images/avtara.png">
+    <script src="https://kit.fontawesome.com/59a01282be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belgrano&family=Bree+Serif&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+  <style>
+    .reveal{
+      position: relative;
+      transform: translateY(150px);
+      opacity: 0;
+      transition: 1s all ease;
+    }
+    
+    .reveal.active{
+      transform: translateY(0);
+      opacity: 1;
+    }
+        </style>
+
+
+<style>
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(59, 59, 59);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(104, 9, 9);
+}
+
+
+
+  html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+
+    .slick-active {
+    visibility: visible !important;
+}
+
+
+.slick-slide {
+    visibility: hidden;
+}
+
+
+
+</style>
+  </head>
+  <body>
+      <div class="wraper">
+<header>
+<nav class="navtag clearfix">
+    <div class="logo"><img src="assets/images/logo.png"/></div>
+    <div class="menu">
+        <a href="#" class="menu-head head-hash">WELCOME</a>
+        <a href="#" class="menu-head head-hash">MENU</a>
+        <a href="#" class="menu-head head-hash">RESERVATIONS</a>
+        <a href="#" class="menu-head head-hash">NEWS</a>
+        <a href="#" class="menu-head">CONTACT</a>
+    </div>
+    <div class="head-socialmedia">
+      <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="nav-a footer-mediaicon"><i class="fab fa-instagram"></i></a>
+        
+   </div>
+</nav>
+</header>
+<div class="main">
+   <section class="banner">
+     <div class="container">
+       <div class="banner-content">
+         <h1>Pastry with love</h1>
+         
+         <div class="line">
+          <svg class="c-dashed-line" width="200" height="90" >
+            <defs>
+              <path id="c-dashed-line" d="M 195.632 81.8332 C 161.8646 94.433 159.8486 94.937 129.1051 82.8412 Q 95.8416 65.7054 65.6021 84.3531 T -0.9249 82.8412"></path>
+            </defs>
+            <use class="c-dashed-line__dash c-dashed-line__path" xlink:href="#c-dashed-line"></use>
+          </svg>
+        </div>
+       
+         <!-- <div id="line">
+         </div> -->
+
+
+         <h4>We’re bringing you fresh ingredients every day in ways you can’t resist.</h4>
+
+         <div class="button1"><a href="#">OUR MENU</a></div>
+       </div>
+     </div>
+   </section>
+
+   <section class="cakes">
+     <div class="container">
+      <div class="stamp">
+        <img src="assets/images/border-img.png"/>
+      </div>
+       <div class="outer-cakesdiv clearfix">
+         <div class="about-cakes reveal">
+           <div class="cake-text">
+           <h2>Arts of cakes</h2>
+           <h6>WE CREATE DELICIOUS MEMORIES</h6>
+
+           <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu
+            Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu
+            Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu
+            Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu.
+           </p>
+          </div>
+          <div class="chef-intro">
+           <h4>Chef Cook</h4>
+           <div class="chef clearfix">
+             <div class="chef-name">Benito</div>
+             <div class="chef-img"><img src="assets/images/avtara.png"/></div>
+             <div class="chef-name">Gaspare</div>
+            </div>
+            <quote>
+              Unique creations for unique<br> occasions.
+            </quote>
+          </div>
+         </div>
+         <div class="group-cakes reveal">
+           <div class="cake-img"><img src="assets/images/product1.jpg"/></div>
+           <div class="cake-img"><img src="assets/images/product2.jpg"/></div>
+           <div class="cake-img"><img src="assets/images/product3.jpg"/></div>
+           <div class="cake-img"><img src="assets/images/product4.jpg"/></div>
+           <div class="cake-logo"><img src="assets/images/tast-img.png"/><h1>TASTES SO GOOD!</h1></div>
+         </div>
+       </div>
+     </div>
+     
+   </section>
+   <section class="tasty-pancake">
+    <div class="container">
+    <div class="pancake03 clearfix">
+      <div class="cakeimg03">
+        <img src="assets/images/side-img.png"/>
+        <div class="icon03">
+          <img src="assets/images/burger-icon.png">
+        </div>
+      </div>
+      <div class="caketext03">
+        <div class="text">
+        <h2>Tasty pancakes</h2>
+        <h6>SEASON FAVOURITE</h6>
+        <p>Quisque rum. Aenean imperdiet. Etiam ultes nisi vel augu
+          Quisque rutrum. Aenean imperdiet. m ultricies nisi vel augu
+          Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu.
+         </p>
+        </div>
+         <!-- <div class="cake-types03 clearfix center slider">
+          <i class="fa-solid fa-angle-left"></i>
+           <div class="cake-type"><img class="cake0301" src="assets/images/item-1.jpg"></div>
+           <div class="cake-type"><img class="cake0301" src="assets/images/item-2.jpg"></div>
+           <div class="cake-type"><img class="cake0301" src="assets/images/item-3.jpg"></div>
+           <i class="fa-solid fa-angle-right"></i>
+         </div> -->
+         <div class="center slider">
+          <div>
+            <img src="assets/images/item-1.jpg">
+          </div>
+          <div>
+            <img src="assets/images/item-2.jpg">
+          </div>
+          <div>
+            <img src="assets/images/item-3.jpg">
+          </div>
+          <div>
+            <img src="assets/images/item-1.jpg">
+          </div>
+          <div>
+            <img src="assets/images/item-1.jpg">
+          </div>
+          <div>
+            <img src="assets/images/item-2.jpg">
+          </div>
+         </div>
+      </div>
+      <div class="min-03"><h4>READY IN</h4>
+      <h1>40</h1>
+    <h6>mins</h6></div>
+     </div>
+    </div> 
+   </section>
+   <section class="menu04">
+     <div class="container clearfix">
+       <div class="menu-text04 reveal">
+         <h1>Breakfast</h1>
+         <h6> 7AM BREAKFAST? WE’RE OPEN!</h6>
+         <div class="items04">
+         <div class="item1">
+           <h4>Full breakfast</h4>
+           <p> Duis ut tortor, et risus, vulputate pretium</p>
+           <h3>$12.49</h3>
+         </div>
+         <div class="item1">
+          <h4>Toast & Jam</h4>
+          <p>  Suspendisse, tempus, nterdum</p>
+          <h3>$4.90</h3>
+        </div>
+        <div class="item1">
+          <h4>Muffins </h4>
+          <p> Fusce eget dui sodales est</p>
+          <h3>$3.95</h3>
+        </div>
+      </div>
+       </div>
+
+       <div class="message04 reveal">
+         <div class="messagecontent04">
+         <h2>Your morning Escape with Flair</h2>
+         <p>Quisque rum. Aenean imperdiet. Etiam ultes nisi vel augu
+          Quisque rutrum. Aenean imperdiet. m ultricies nisi vel augu
+          Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augu.</p>
+
+          <h6><a href="#">READ</a></h6>
+        </div>
+       </div>
+     </div>
+   </section>
+   <section class="last-section">
+     <div class="container clearfix">
+       <div class="head05 reveal">
+       <h1>The Jibarito sandwich</h1> 
+       <h6> THE BEST SANDWITCH YOU’VE EVER TASTED!</h6>
+       </div>
+       <div class="list05">
+         <div class="incredient">
+           <div class="img"><img src="assets/images/item-4.jpg"/></div>
+           <div class="text">
+             <h3>Class aptent</h3>
+             <h5>Quot alienum persecuti ut eam, nam ad  atqui primis nusquam.</h5>
+           </div>
+           </div>
+           <div class="incredient">
+            <div class="img"><img src="assets/images/item-6.jpg"/></div>
+            <div class="text">
+              <h3>Nulla eget</h3>
+              <h5>Nullam dictum felis eu pede mollis  pretium Integer tincidunt.</h5>
+            </div>
+          </div>
+          <div class="incredient">
+            <div class="img"><img src="assets/images/item-7.jpg"/></div>
+            <div class="text">
+              <h3>Sed nibh purus</h3>
+              <h5> Aenean eleifend tellus leo ligula,  porttitor eu, consequat vitae.</h5>
+            </div>
+          </div>
+         </div>
+       
+
+       <div class="photo05">
+         <img src="assets/images/sandwitch.jpg"/>
+         <div class="photolist05">
+          <div class="min-05 a"><h4>PREP</h4>
+            <h1>15</h1>
+          <h6>mins</h6></div>
+          <div class="min-05 a"><h4>COOK</h4>
+            <h1>35</h1>
+          <h6>mins</h6></div>
+          <div class="min-05 b"><h4>READY IN</h4>
+            <h1>50</h1>
+          <h6>mins</h6></div>
+         </div>
+         <div class="recipe-link">
+           <a href="#">FULL RECIPE</a>
+         </div>
+       </div>
+     </div>
+   </section>
+</div>
+<footer>
+  <div class="foot clearfix">
+    <div class="container">
+    <div class="foot-name">
+      <a href="#" class="foot-line">OUR MENU</a>
+      <a href="#" class="foot-line">GALLERY</a>
+      <a href="#" >CULTURE</a>
+    </div>
+    <div class="foot-img"><img src="assets/images/logo(dark).png"></div>
+    <div class="foot-name">
+      <a href="#" class="foot-line">EVENTS</a>
+      <a href="#" class="foot-line">CATERING</a>
+      <a href="#">VISIT US</a>
+    </div>
+   </div>
+   </div>
+</footer>
+</div>
+  </body>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css"></script>
+         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/motion-ui.css"></script> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/motion-ui.js"></script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+<script>
+  function makeLine(id, squiggleCount) {
+  var curve;
+  var lineEl = $(id);
+
+  for (var i = 0; i < squiggleCount; i++) {
+    curve = document.createElement('div');
+    curve.className = 'curve-1';
+    lineEl.append(curve);
+
+    curve = document.createElement('div');
+    curve.className = 'curve-2';
+    lineEl.append(curve);
+  }
+}
+$(document).ready(function(){
+    makeLine('#line', 3);
+});
+
+
+
+
+var $elem = $('.banner-content h1');
+
+MotionUI.animateIn($elem, 'slide-in-left', function() {
+  console.log('Transition finished!');
+});
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  $(document).on('ready', function() {
+    $(".center").slick({
+      dots: true,
+      infinite: true,
+      centerMode: true,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    });
+  });
+
+
+  
+  function reveal() {
+   var reveals = document.querySelectorAll(".reveal");
+ 
+   for (var i = 0; i < reveals.length; i++) {
+     var windowHeight = window.innerHeight;
+     var elementTop = reveals[i].getBoundingClientRect().top;
+     var elementVisible = 150;
+ 
+     if (elementTop < windowHeight - elementVisible) {
+       reveals[i].classList.add("active");
+     } else {
+       reveals[i].classList.remove("active");
+     }
+   }
+ }
+ 
+ window.addEventListener("scroll", reveal);
+</script>
+
+
+
+<script>
+  
+ </script>
+  </html>

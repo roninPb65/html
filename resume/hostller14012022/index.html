@@ -1,0 +1,197 @@
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/images/room-img.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/59a01282be.js" crossorigin="anonymous"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="assets/font-awsome/font-awesome.css"> -->
+<style>
+/* input[type="date"]:not(.has-value):before{
+  color: lightgray;
+  content: attr(placeholder);
+} */
+/* input[type=date]::-webkit-datetime-edit-text {
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]::-webkit-datetime-edit-month-field{
+    -webkit-appearance: none;
+    display: none;
+}
+input[type=date]::-webkit-datetime-edit-day-field {
+    -webkit-appearance: none;
+    display: none;
+} 
+input[type=date]::-webkit-datetime-edit-year-field {
+    -webkit-appearance: none;
+    display: none;
+}*/
+img {
+    width: 100%;
+}
+
+</style>
+</head>
+<body>
+<div class="page-waraper">
+    <header>
+        <nav>
+            <div class="container clearfix">
+                <div class="nav-logo">
+                    <span>LogoHere</span>
+                </div>
+                <div class="nav-option">
+                    <ul class="nav-ul clearfix">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Rooms</li>
+                        <li>News</li>
+                        <li>Pages</li>
+                        <li class="button">Contacts</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="main-section">
+        <section class="hostller">
+            <div class="container clearfix">
+                <div class="offer-head">
+                    <h1>Hosteller — amazing hostel for the free spirited traveler</h1>
+                    <p>Egestas pretium aenean pharetra magna ac. Et tortor consequat id porta nibh venenatis cras sed. Vel turpis nunc eget lorem dolor sed</p>
+                    <div class="room-available clearfix">
+                        <form class="form">
+                            
+                           <div for="country" class="div">
+                               <div class="sub-div">
+                               <label>Check-in</label><br>
+                               <i class="far fa-calendar-alt"></i>
+
+                            <select id="date" name="date"  class="input-text">
+                                <option>Add Date</option>
+                              <option value="India">01/jan/2022</option>
+                              <option value="India">01/jan/2022</option>
+                              <option value="India">01/jan/2022</option>
+                              <option value="India">01/jan/2022</option>
+                            </select></div></div>   
+                            <div for="state" class="div">
+                                <div class="sub-div">
+                                <label>Check-out</label><br>
+                                <i class="far fa-calendar-alt"></i>
+                                <!-- <input type="date" placeholder="Add Date" onchange="this.className=(this.value!=''?'has-value':'')"> -->
+                                <select id="date" name="date" class="input-text">
+                                    <option>Add Date</option>
+                                    <option value="India">01/jan/2022</option>
+                                    <option value="India">01/jan/2022</option>
+                                    <option value="India">01/jan/2022</option>
+                                    <option value="India">01/jan/2022</option>
+                                </select></div></div> 
+                            <div for="zip" class="div">
+                                <div class="sub-div">
+                                <label>Guests</label><br>
+                                <i class="far fa-user"></i>
+                            <input type="guests" class="guests input-text" name="guests" placeholder="1 Adult" size="2" maxlength="2">
+                            <!-- <input type="date"  placeholder="from">
+                            <input type="date" placeholder="Add Date" onchange="this.className=(this.value!=''?'has-value':'')"> -->
+                            </div></div>  
+                        </form>
+                            <div for="search" class="search div">
+                                <a href="#">Search</a>
+                            </div>
+                            <!--           
+                            <div for="email" class="a div">Email:<br>
+                            <input type="email" class="email input-text" name="email"></div>          
+                            <div for="phone" class="div">Phone:<br>
+                            <input type="number" class="phone-number input-text" name="phone"></div>           -->
+                           
+                            <!-- <div class="private-policy">
+                                <input type="checkbox">
+                               
+                                <h6>Join The 7-Day Evolvere Challenge (FREE)</h6>
+                                <p>Terms of service are the legal agreements between a service provider and a person whoz wants to use that service. The person must agree to abide by the terms of service in order to use the offered service. Terms of service can also be merely a disclaimer, especially regarding the use of websites</p>
+                              </div> -->
+                           
+                    </div>
+                    <!-- <img class="back" src="assets/images/background.jpg"/> -->
+                </div>
+                <div class="room">
+                    <img src="assets/images/room-img.png"/>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="rooms-available">
+            <div class="container">
+                <div class="room-price-list clearfix">
+                    <h3>Hostel rooms</h3>
+                <a class="button">View all rooms</a>
+                </div>
+                <div class="price-list clearfix">
+                    <div class="list">
+                    <div class="room-price">
+                        <div class="room-img">
+                        <img src="assets/images/bunk-bed.jpg"/>
+                        <div class="tag">$18<span> / 1 night</span></div>
+                        </div>
+                        <div class="room-details">
+                        <div class="detail-one">
+                        <h5> Bed in 6-Bed Room with Shared Bathroom</h5></div>
+                        <div class="detail-two">
+                        <i class="far fa-user"></i>2 Sleeps &nbsp
+                        <i class="fas fa-bed"></i>1 bunk bed</div>
+                        <div class="detail-three">
+                        <a href="#">See availability &nbsp<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="room-price">
+                        <div class="room-img">
+                        <img src="assets/images/twin-beds.jpg"/>
+                        <div class="tag">$35<span> / 1 night</span></div>
+                        </div>
+                        <div class="room-details">
+                            <div class="detail-one">
+                        <h5>Double Room with Private Bathroom</h5></div>
+                        <div class="detail-two">
+                        <i class="far fa-user"></i>2 Sleeps &nbsp
+                        <i class="fas fa-user-friends"></i>2 twin beds</div>
+                        <div class="detail-three">
+                        <a href="#"> See availability &nbsp<i class="fas fa-arrow-right"></i></a>
+                    </div>
+                        </div>
+                    </div></div>
+                    <div class="artical">
+                        <h4>Stay Longer, Save More</h4>
+                        <p><b>It's simple: the longer you stay, the more you save!</b></p>
+
+                        <p>Save up to 30% on daily rate for stays longer than 14 nights
+                            <br><br>
+                        Save up to 20% off the nightly rate on stays between 7-14 nights</p>
+
+                        <a href="#" class="button">Choose room</a>
+                    </div>
+                </div>
+                <!-- <img class="back" src="assets/images/background.jpg"/> -->
+            </div>
+        </section>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+</body>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</html>
