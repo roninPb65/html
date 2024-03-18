@@ -1,0 +1,239 @@
+body{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    border: 0px;
+    font-size: 18px;
+    letter-spacing: 12px;
+    color: #060606;
+    font-family: 'Dosis', sans-serif;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0px auto;
+    padding: 0px 0px;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+img {
+   
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 1700px) {
+    .left-nav{
+        margin-left: 165px !important;
+    }
+    .right-nav{
+        margin-right: 165px !important;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .left-nav{
+        margin-left: 120px !important;
+    }
+    .right-nav{
+        margin-right: 120px !important;
+    }
+  }
+
+.left-nav {
+    float: left;
+    margin: 1.28% 0px 1.28% 0px;
+    padding: 0px 0px 0px 10px
+}
+.logo {
+    float: left;
+    padding: 5px;
+}
+.right-nav {
+    float: right;
+    margin-right:0px;
+    margin: 1.28% 0px 1.28% 0px;
+}
+
+.nav-button {
+    float: left;
+    margin: 5px 35px 5px 0px;
+}
+.nav-search {
+    float: right;
+    padding: 15px 5px;
+    color: #ff5672;
+}
+a.nav-a {
+    padding: 10px 25px;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 2px;
+    float: left;
+}
+a.nav-a:hover{
+    background-color: #ff5672;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+.banner {
+    color: white;
+   
+    position: relative;
+}
+.banner-content {
+    left: 0px;
+    right: 0px;
+    width: 50.02%;
+    margin: 0px auto;
+    position: absolute;
+    top: 36.75%;
+    bottom: 36.75%;
+    max-width: 900px;
+}
+.banner-content h1 {
+    font-size: 40px;
+    letter-spacing: 12px;
+    text-align: center;
+    animation-delay: 0.2s;
+    animation: flip;
+  animation-duration: 2s;
+}
+.banner-content h4{
+    font-size: 17px;
+    letter-spacing: 3px;
+    line-height: 22px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 75px;
+}
+a.banner-button {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #ff5773;
+    font-weight: 400;
+    background-color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    width: 17%;
+    transform: translateX(240%);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+section.products {
+    padding: 120px 0px 20px 0px;
+}
+.product-button {
+    width: 50%;
+    margin: 35px auto;
+    padding: 0px 35px;
+}
+.product-item {
+    margin: 35px 0px;
+}
+.product-a{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 400;
+    background-color: #ff5773;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    width: 17%;
+    text-align: center;
+    margin: 15px auto;
+}
+.product02 {
+    width: 100%;
+    column-count: 3;
+    column-gap: 30px;
+    widows: 1;
+}
+.product02 img {
+    width: 100%;
+}
+.product-image{
+    display: inline-block;
+    position: relative;
+    margin: 0px 0px 30px 0px;         
+    /* animation-delay: 0.2s;
+    animation:backInLeft;
+  animation-duration: 2s; */
+  animation: zoomIn 1s 1;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: zoomIn;
+}
+
+
+.product-image:hover .hover{
+    visibility: visible;
+    transform: scale3d(0.95, 0.95, 1);
+
+}
+.hover{
+    visibility: hidden;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ed3251c4;
+    color: white;
+   
+}
+.hover h2{
+    position: absolute;
+    top: 45%;
+    bottom: 45%;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.contact-us {
+    padding: 30px 0px;
+}
+.socialmedia-links {
+    text-align: center;
+    color: #c2cfd7;
+}
+.copyright{
+    margin: 20px 0px;
+}
+.copyright h5 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+.media-icon {
+    font-size: 16px;
+    letter-spacing: 10px;
+    font-weight: 400;
+    margin: 35px 0px;
+}
+.copyright span {
+color: #ff5773;
+}

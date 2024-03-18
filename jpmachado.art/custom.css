@@ -1,0 +1,171 @@
+.nav-holder nav li a.active{
+    color: #404040!important;
+}
+
+.grid-item-holder {
+    padding: 7px;
+}
+
+.related-posts .team-info {
+    text-align: left;
+}
+.related-posts .team-box {
+    width: 33%;
+}
+@media only screen and  (max-width: 754px) {
+    .related-posts  .team-box{
+        width: 100%;
+    }
+}
+section {
+    padding:0px;
+}
+.transaparent-text-wrap {
+    margin: 40px auto 0;
+}
+
+.post {
+    margin-bottom: 80px;
+}
+.blog-title-opt {
+    padding-bottom: 23px;
+    margin-bottom: 0px;
+}
+
+.fw-post h1{
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fw-post h1,
+.fw-post h2{
+    line-height: 1em;
+    padding-bottom: 0px!important;
+}
+
+.fw-post h3{
+    text-align: left;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.grid-item-holder .thumb-info {
+    top: 0px;
+    padding-top: 30%;
+    background: #000000b3;
+}
+.thumb-info h3 {
+    padding-bottom: 1px;
+    line-height: 1em;
+}
+.thumb-info p {
+    line-height: 1.5em;
+}
+
+.contact-bg.bg {
+    background-position: right;
+}
+
+#contact-form input[type="email"],
+#contact-form input[type="text"]{
+    float: left;
+    width: 100%;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    height: 50px;
+    border-radius: none;
+    position: relative;
+    z-index: 20;
+    padding-left: 30px;
+    color: #999;
+    border: 0;
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.41);
+    color: #fff;
+}
+
+#contact-form input[type="email"],
+#contact-form input[type="text"],
+.contact-form-holder.transparent-form #contact-form textarea {
+    margin-bottom: 0px;
+    margin-top: 26px;
+    font-family: sans-serif;
+}
+
+#contact-form .has-error input[type="email"],
+#contact-form .has-error input[type="text"],
+.contact-form-holder.transparent-form #contact-form .has-error textarea {
+    border:2px solid #a94442;
+}
+
+
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: #a94442;
+    padding: 0px;
+    text-align: left;
+}
+
+#ajaxFormSubmit {
+	float:left;
+	border:none;
+	background: #292929;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    font-size: 10px;
+    text-transform: uppercase;
+	padding:15px 30px 15px 30px;
+	line-height:17px;
+	cursor:pointer;
+	-webkit-appearance: none;
+	-webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+#ajaxFormSubmit:hover {
+	 color:#ccc;
+}
+#ajaxFormSubmit i {
+	-webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+#ajaxFormSubmit:hover i {
+	color:#000;
+}
+
+
+#language-selector{
+    position: fixed;
+    top: 0px; right:10px;
+    background: #666;
+    z-index: 1200;
+    width:auto;
+    padding: 2px;
+    border-radius: 0px 0px 5px 5px;
+}
+#language-selector select{
+    background: transparent;
+    border-radius: 5px;
+    border:none;
+    padding: 5px;
+    color:#fff;
+}
+#language-selector select option {
+    background: #666;
+    color: #fff;
+}
+
+.post-gallery img{
+    margin: 10px 0px;
+}
+.post-gallery img:hover{
+    opacity: 0.7;
+}
