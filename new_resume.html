@@ -3131,8 +3131,59 @@
         /*POC Multi Experience Para*/
         .preview-container .skn-mlm3 .groupChildPara.paragraph .singlecolumn .companyloc{display:none}
 
-        @media print{.d-print-none{display:block !important}.d-print-inline{display:inline !important}.d-print-inline-block{display:inline-block !important}.d-print-block{display:block !important}.d-print-table{display:table !important}.d-print-table-row{display:table-row !important}.d-print-table-cell{display:table-cell !important}.d-print-flex{display:-ms-flexbox !important;display:flex !important}.d-print-inline-flex{display:-ms-inline-flexbox !important;display:inline-flex !important}}.flex-row{-ms-flex-direction:row !important;flex-direction:row !important}.flex-column{-ms-flex-direction:column !important;flex-direction:column !important}.flex-row-reverse{-ms-flex-direction:row-reverse !important;flex-direction:row-reverse !important}.flex-column-reverse{-ms-flex-direction:column-reverse !important;flex-direction:column-reverse !important}.flex-wrap{-ms-flex-wrap:wrap !important;flex-wrap:wrap !important}.flex-nowrap{-ms-flex-wrap:nowrap !important;flex-wrap:nowrap !important}.flex-wrap-reverse{-ms-flex-wrap:wrap-reverse !important;flex-wrap:wrap-reverse !important}.flex-fill{-ms-flex:1 1 auto !important;flex:1 1 auto !important}.flex-grow-0{-ms-flex-positive:0 !important;flex-grow:0 !important}.flex-grow-1{-ms-flex-positive:1 !important;flex-grow:1 !important}.flex-shrink-0{-ms-flex-negative:0 !important;flex-shrink:0 !important}.flex-shrink-1{-ms-flex-negative:1 !important;flex-shrink:1 !important}.justify-content-start{-ms-flex-pack:start !important;justify-content:flex-start !important}.justify-content-end{-ms-flex-pack:end !important;justify-content:flex-end !important}.justify-content-center{-ms-flex-pack:center !important;justify-content:center !important}.justify-content-between{-ms-flex-pack:justify !important;justify-content:space-between !important}.justify-content-around{-ms-flex-pack:distribute !important;justify-content:space-around !important}.align-items-start{-ms-flex-align:start !important;align-items:flex-start !important}.align-items-end{-ms-flex-align:end !important;align-items:flex-end !important}.align-items-center{-ms-flex-align:center !important;align-items:center !important}.align-items-baseline{-ms-flex-align:baseline !important;align-items:baseline !important}.align-items-stretch{-ms-flex-align:stretch !important;align-items:stretch !important}.align-content-start{-ms-flex-line-pack:start !important;align-content:flex-start !important}.align-content-end{-ms-flex-line-pack:end !important;align-content:flex-end !important}.align-content-center{-ms-flex-line-pack:center !important;align-content:center !important}.align-content-between{-ms-flex-line-pack:justify !important;align-content:space-between !important}.align-content-around{-ms-flex-line-pack:distribute !important;align-content:space-around !important}.align-content-stretch{-ms-flex-line-pack:stretch !important;align-content:stretch !important}.align-self-auto{-ms-flex-item-align:auto !important;align-self:auto !important}.align-self-start{-ms-flex-item-align:start !important;align-self:flex-start !important}.align-self-end{-ms-flex-item-align:end !important;align-self:flex-end !important}.align-self-center{-ms-flex-item-align:center !important;align-self:center !important}.align-self-baseline{-ms-flex-item-align:baseline !important;align-self:baseline !important}.align-self-stretch{-ms-flex-item-align:stretch !important;align-self:stretch !important}
+        /* Default print styles */
+@media print {
+  .d-print-none {
+    display: none !important;
+  }
+  .d-print-inline {
+    display: inline !important;
+  }
+  .d-print-inline-block {
+    display: inline-block !important;
+  }
+  .d-print-block {
+    display: block !important;
+  }
+  .d-print-table {
+    display: table !important;
+  }
+  .d-print-table-row {
+    display: table-row !important;
+  }
+  .d-print-table-cell {
+    display: table-cell !important;
+  }
+  .d-print-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .d-print-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
 
+/* Allow users to override print styles */
+@media print {
+  /* Enable elements that are normally hidden during print */
+  .d-print-none {
+    display: block !important; /* Overriding the print styles */
+  }
+  
+  /* Allow specific elements to be printed */
+  .user-override-print {
+    display: block !important; /* Allow printing of specific content */
+  }
+  
+  /* Optionally, you can provide more user-friendly overrides for other classes */
+  .user-show-content {
+    display: block !important;
+    color: black !important;  /* Ensuring it shows up clearly in print */
+  }
+}
+
+        
     </style></div><div data-photo-skin="" class="document doc-root fontsize fontface vmargins hmargins undefined mono-1   pagesize skn-mlm3 MLM3  MPR      " docskinwidth="634" data-color="#9987ff"><div data-id="CONTAINER_PARENT_0" class="topSection"><div data-id="CONTAINER_0" class=""><div data-react-beautiful-dnd-draggable="17" class="sortable-item section-container SortableItem-sibling  data-CNTC"><div class="document-tool sec-tool" id="editIcons"><button class="btn btn-icon-tertiary btn-icon-edit" type="button" title="View / Edit"><i class="icon-edit"></i></button></div><div data-id="SECTION_CNTC968768f9-6345-4194-8919-f150cf94bb4f" class="section cntcSec notdraggable SECTION_CNTC      " data-section-cd="CNTC"><div class=" doc-item"><div class=""><div class=""><div data-id="PARAGRAPH_CNTC_00be9224-ab52-8724-cf62-594bea0030d4" class="paragraph PARAGRAPH_CNTC firstparagraph  "><div class="clearfix doc-item">
                         <span class="address">
 							
