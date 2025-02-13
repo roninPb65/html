@@ -9,7 +9,11 @@
     --hover-bg-dark: #444;
     --transition-speed: 0.3s;
   }
-  
+
+img.w-40.h-40.rounded-full.mx-auto.shadow-lg.border-4.border-purple-500 {
+    object-fit: cover;
+}
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
