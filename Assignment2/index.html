@@ -12,7 +12,7 @@
 <img src="Liberary_logo_white.png" style="max-width: 14vw;">
 <nav class="flex space-x-8">
 <a href="#books" class="text-lg font-medium hover:underline">Books</a>
-<a href="aboutMe.html" class="text-lg font-medium hover:underline">About Me</a>
+<a href="#AboutUs" class="text-lg font-medium hover:underline">About Us</a>
 <a href="#contact" class="text-lg font-medium hover:underline">Contact</a>
 </nav>
 <div class="flex space-x-3">
@@ -21,7 +21,7 @@
 </div>
 </header>
 <main class="max-w-5xl mx-auto p-8 mt-24">
-<section class="mb-10">
+<section class="mb-10" style="border-bottom: 1px solid #ffffff6b;padding-bottom: 40px;">
 <h2 class="text-3xl font-bold mb-6 text-purple-400">Available Books</h2>
 <div id="books" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div onclick="showDescription(0)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
@@ -74,7 +74,8 @@
     </div>
 </div>
 </section>
-<section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl">
+
+<section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl" >
 <h2 class="text-3xl font-bold mb-6 text-purple-400">Contact Us</h2>
 <form class="space-y-6">
 <input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border-none rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-purple-400">
@@ -83,6 +84,29 @@
 <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-500 transition">Send</button>
 </form>
 </section>
+
+<section class="mb-10" style="padding: 40px 0px 0px 0px;border-top: 1px solid #ffffff6b;margin-top: 55px;margin-bottom: 0px;">
+    <h2 class="text-3xl font-bold mb-6 text-purple-400">About Us</h2>
+    <div id="AboutUs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="aboutMeSukh.html" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+            <img  src="Sukh.jpg" alt="Heart Stopper" class="w-full h-48 object-contain rounded-lg mb-3">
+            <p class="text-lg font-semibold text-blue-400">Sukhpreet Singh</p>
+        </a>
+        <a href="aboutMeShiv.html" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+            <img src="Shiv.jpg" alt="Heart Stopper" class="w-full h-48 object-contain rounded-lg mb-3">
+            <p class="text-lg font-semibold text-blue-400">Shiv Patel</p>
+        </a>
+        <a href="aboutMeAkua.html" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+            <img src="Akua_About_Pic.png" alt="Heart Stopper" class="w-full h-48 object-contain rounded-lg mb-3">
+            <p class="text-lg font-semibold text-blue-400">Akua Djan</p>
+        </a>
+        <a href="aboutMeSree.html" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+            <img src="Sree.jpg" alt="Heart Stopper" class="w-full h-48 object-contain rounded-lg mb-3">
+            <p class="text-lg font-semibold text-blue-400">Sreegar Prasad Ravi</p>
+        </a>
+    </div>
+</section>
+
 </main>
 <footer class="text-center py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white mt-10 shadow-lg">
 <p>&copy; 2025 Tango Inc. Library</p>
