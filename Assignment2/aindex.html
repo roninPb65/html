@@ -1,0 +1,72 @@
+<!-- https://docs.google.com/forms/d/e/1FAIpQLSeaLXKtbY8AI50kxMZBvNYOI2q1Y1lW_n2BSwRkEx99G9fBMg/viewform?embedded=true -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tango Inc. - Telecom Retail</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Day/Night Mode Toggle -->
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()" id="themeButton">
+      <i id="themeIcon" class="fas fa-sun"></i>
+    </button>
+  </div>
+
+  <!-- Header Section -->
+  <header id="home">
+    <h1>Tango Inc. - Telecom Retail</h1>
+    <p>Your one-stop shop for all your telecom needs.</p>
+  </header>
+
+  <!-- Search Functionality -->
+  <section id="search">
+    <h2>Search for an Item</h2>
+    <input type="text" id="searchInput" placeholder="Search for a product...">
+    <button onclick="searchItem()">Search</button>
+    <p id="searchMessage"></p>
+  </section>
+
+  <!-- Item Display Section -->
+  <section id="items">
+    <h2>Our Products</h2>
+    <div id="productList" class="product-list">
+      <!-- Dummy Product Data will be injected here -->
+    </div>
+  </section>
+
+  <!-- Item Description Modal -->
+  <div id="itemDescriptionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="itemModalTitle">Item Title</h2>
+      <p id="itemModalDescription">Description of the item will go here...</p>
+    </div>
+  </div>
+
+  <!-- Contact Form Section using Google Form -->
+  <section id="contactForm">
+    <h2>Contact Us</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeaLXKtbY8AI50kxMZBvNYOI2q1Y1lW_n2BSwRkEx99G9fBMg/viewform?embedded=true" width="100%" height="1050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <h2>Our Products</h2>
+    <ul>
+      <li>Smartphone</li>
+      <li>Headphones</li>
+      <li>Tablet</li>
+      <li>Smartwatch</li>
+      <li>Charger</li>
+    </ul>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

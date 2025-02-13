@@ -1,0 +1,229 @@
+/* General Styles */
+:root {
+    --primary-bg-light: #f4f4f4;
+    --primary-bg-dark: #333;
+    --primary-text-light: #333;
+    --primary-text-dark: #fff;
+    --accent-color: #008CBA;
+    --hover-bg-light: #ddd;
+    --hover-bg-dark: #444;
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg-light);
+    color: var(--primary-text-light);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    scroll-behavior: smooth;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode {
+    background-color: var(--primary-bg-dark);
+    color: var(--primary-text-dark);
+  }
+  
+  header {
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+  }
+  
+  h1, h2 {
+    margin: 10px 0;
+  }
+  
+  /* Day/Night Mode Button */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  #themeButton {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-text-light);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #themeButton:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Search Section */
+  #search input {
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #search button {
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #items ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+  }
+  
+  .product-item {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Modal styles for item description */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Google Form Embed */
+  #contactForm iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 1050px;
+    border: none;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: var(--primary-bg-dark);
+    color: var(--primary-text-dark);
+    padding: 30px;
+    text-align: center;
+  }
+  
+  footer h2 {
+    color: white;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  footer ul li {
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Hover effects for footer links */
+  footer ul li:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Responsive Design for Mobile and Tablets */
+  @media (max-width: 768px) {
+    #search input {
+      width: 100%;
+    }
+  
+    .product-list {
+      display: block;
+      text-align: center;
+    }
+  
+    .product-item {
+      width: 80%;
+      margin: 10px auto;
+    }
+  
+    #contactForm iframe {
+      height: 900px;
+    }
+  }
+  
+  /* For Mobile Devices */
+  @media (max-width: 480px) {
+    header {
+      padding: 20px 10px;
+    }
+  
+    #themeButton {
+      font-size: 20px;
+    }
+  
+    footer {
+      padding: 20px;
+    }
+  }
+  
+  

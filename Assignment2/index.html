@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tango Inc. Library</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center py-6 px-8 bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg">
+<h1 class="text-3xl font-extrabold">Tango Inc. Library</h1>
+<nav class="flex space-x-8">
+<a href="#books" class="text-lg font-medium hover:underline">Books</a>
+<a href="aboutMe.html" class="text-lg font-medium hover:underline">About Me</a>
+<a href="#contact" class="text-lg font-medium hover:underline">Contact</a>
+</nav>
+<div class="flex space-x-3">
+<input type="text" id="searchBox" class="px-4 py-3 w-80 border-none rounded-lg text-gray-900 focus:ring-2 focus:ring-purple-400" placeholder="Search for a book...">
+<button onclick="searchBook()" class="bg-white text-purple-600 px-6 py-3 rounded-lg ml-3 font-semibold hover:bg-purple-100 transition">Search</button>
+</div>
+</header>
+<main class="max-w-5xl mx-auto p-8 mt-24">
+<section class="mb-10">
+<h2 class="text-3xl font-bold mb-6 text-purple-400">Available Books</h2>
+<div id="books" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div onclick="showDescription(0)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="1.jpg" alt="A Court of Silver Flames" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">A Court of Silver Flames</p>
+    </div>
+    <div onclick="showDescription(1)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="2.jpg" alt="To Kill a Mockingbird" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">To Kill a Mockingbird</p>
+    </div>
+    <div onclick="showDescription(2)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="3.jpg" alt="The Hitch Hiker's Guide To The Galaxy" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">The Hitch Hiker's Guide To The Galaxy</p>
+    </div>
+    <div onclick="showDescription(3)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="4.jpg" alt="Normal People" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Normal People</p>
+    </div>
+    <div onclick="showDescription(4)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="5.jpg" alt="Where The Crawdads Sing" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Where The Crawdads Sing</p>
+    </div>
+    <div onclick="showDescription(5)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="6.jpg" alt="Insurgent Love" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Insurgent Love</p>
+    </div>
+    <div onclick="showDescription(6)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="7.png" alt="Twigted Love" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Twigted Love</p>
+    </div>
+    <div onclick="showDescription(7)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="8.jpg" alt="Chainsaw Man" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Chainsaw Man</p>
+    </div>
+    <div onclick="showDescription(8)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="9.jpg" alt="Uglies" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Uglies</p>
+    </div>
+    <div onclick="showDescription(9)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="10.jpg" alt="Trust" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Trust</p>
+    </div>
+    <div onclick="showDescription(10)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="11.jpg" alt="Heart Stopper" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">Heart Stopper</p>
+    </div>
+    <div onclick="showDescription(11)" class="cursor-pointer bg-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-700 transition">
+    <img src="12.jpg" alt="The Fellowship Of The Rings" class="w-full h-48 object-contain rounded-lg mb-3">
+    <p class="text-lg font-semibold text-blue-400">The Fellowship Of The Rings</p>
+    </div>
+</div>
+</section>
+<section id="contact" class="bg-gray-800 p-8 rounded-lg shadow-xl">
+<h2 class="text-3xl font-bold mb-6 text-purple-400">Contact Us</h2>
+<form class="space-y-6">
+<input type="text" id="name" placeholder="Your Name" required class="w-full p-3 border-none rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-purple-400">
+<input type="email" id="email" placeholder="Your Email" required class="w-full p-3 border-none rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-purple-400">
+<textarea id="message" placeholder="Your Message" required class="w-full p-3 border-none rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-purple-400"></textarea>
+<button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-500 transition">Send</button>
+</form>
+</section>
+</main>
+<footer class="text-center py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white mt-10 shadow-lg">
+<p>&copy; 2025 Tango Inc. Library</p>
+</footer>
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+<div class="bg-gray-800 p-6 rounded-lg shadow-lg w-1/3 text-center">
+<h2 id="popupTitle" class="text-2xl font-bold text-purple-400"></h2>
+<p id="popupDescription" class="mt-4 text-gray-300"></p>
+<button onclick="closePopup()" class="mt-6 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-500 transition">Close</button>
+</div>
+</div>
+<script>
+
+        const books = [
+// 1.jpg book image
+            { title: "A Court of Silver Flames", description: "A Court of Silver Flames is the first spin-off book in the A Court of Thorns and Roses series by Sarah J. Maas. It is set after the events of A Court of Frost and Starlight, and is told from the perspectives of Nesta and Cassian. It was released on the 16th of February 2021.  " },
+// 2.jpg
+            { title: "To Kill a Mockingbird", description: "An epic historical military fantasy, inspired by the bloody history of China’s twentieth century and filled with treachery and magic. When Rin aced the Keju—the Empire-wide test to find the most talented youth to learn at the Academies—it was a shock to everyone: to the test officials, who couldn’t believe a war orphan from Rooster Province could pass without cheating; to Rin’s guardians, who believed they’d finally be able to marry her off and further their criminal enterprise; and to Rin herself, who realized she was finally free of the servitude and despair that had made up her daily existence. That she got into Sinegard—the most elite military school in Nikan—was even more surprising. But surprises aren’t always good. Because being a dark-skinned peasant girl from the south is not an easy thing at Sinegard. Targeted from the outset by rival classmates for her color, poverty, and gender, Rin discovers she possesses a lethal, unearthly power—an aptitude for the nearly-mythical art of shamanism. Exploring the depths of her gift with the help of a seemingly insane teacher and psychoactive substances, Rin learns that gods long thought dead are very much alive—and that mastering control over those powers could mean more than just surviving school. For while the Nikara Empire is at peace, the Federation of Mugen still lurks across a narrow sea. The militarily advanced Federation occupied Nikan for decades after the First Poppy War, and only barely lost the continent in the Second. And while most of the people are complacent to go about their lives, a few are aware that a Third Poppy War is just a spark away . . . Rin’s shamanic powers may be the only way to save her people. But as she finds out more about the god that has chosen her, the vengeful Phoenix, she fears that winning the war may cost her humanity . . . and that it may already be too late." },
+// 3.jpg
+            { title: "The Hitch Hiker's Guide To The Galaxy", description: "Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor. Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide ('A towel is about the most massively useful thing an interstellar hitchhiker can have') and a galaxy-full of fellow travelers: Zaphod Beeblebrox--the two-headed, three-armed ex-hippie and totally out-to-lunch president of the galaxy; Trillian, Zaphod's girlfriend (formally Tricia McMillan), whom Arthur tried to pick up at a cocktail party once upon a time zone; Marvin, a paranoid, brilliant, and chronically depressed robot; Veet Voojagig, a former graduate student who is obsessed with the disappearance of all the ballpoint pens he bought over the years. Where are these pens? Why are we born? Why do we die? Why do we spend so much time between wearing digital watches? For all the answers stick your thumb to the stars. And don't forget to bring a towel! " },
+// 4.jpg book image
+            { title: "Normal People", description: "At school Connell and Marianne pretend not to know each other. He’s popular and well-adjusted, star of the school soccer team while she is lonely, proud, and intensely private. But when Connell comes to pick his mother up from her housekeeping job at Marianne’s house, a strange and indelible connection grows between the two teenagers - one they are determined to conceal." },
+// 5.jps
+            { title: "Where The Crawdads Sing", description: "For years, rumors of the 'Marsh Girl' haunted Barkley Cove, a quiet fishing village. Kya Clark is barefoot and wild; unfit for polite society. So in late 1969, when the popular Chase Andrews is found dead, locals immediately suspect her. But Kya is not what they say. A born naturalist with just one day of school, she takes life's lessons from the land, learning the real ways of the world from the dishonest signals of fireflies. But while she has the skills to live in solitude forever, the time comes when she yearns to be touched and loved. Drawn to two young men from town, who are each intrigued by her wild beauty, Kya opens herself to a new and startling world—until the unthinkable happens. In Where the Crawdads Sing, Owens juxtaposes an exquisite ode to the natural world against a profound coming of age story and haunting mystery. Thought-provoking, wise, and deeply moving, Owens’s debut novel reminds us that we are forever shaped by the child within us, while also subject to the beautiful and violent secrets that nature keeps. The story asks how isolation influences the behavior of a young woman, who like all of us, has the genetic propensity to belong to a group. The clues to the mystery are brushed into the lush habitat and natural histories of its wild creatures." },
+
+// 6.jpg
+            { title: "Insurgent Love", description: "Domestic homicide is violence that strikes within our most intimate relations. The most common strategy for addressing this kind of transgression relies on policing and prisons. But through examining commonly accepted typologies of high-risk intimate partner violence, Ardath Whynacht shows that policing can be understood as part of the same root problem as the violence it seeks to mend and provides an abolitionist frame for the most dangerous forms of intimate partner violence. This book illustrates that the origins of both the carceral state and toxic masculinity are situated in settler colonialism and racial capitalism and sees police homicide and domestic homicide as akin. Describing an experience of domestic homicide in her community and providing a deeply personal analysis of some of the most recent cases of homicide in Canada, the author inhabits the complexity of seeking abolitionist justice. Insurgent Love traces the major risk factors for domestic homicide within the structures of racial capitalism and suggests transformative, anti-capitalist, anti-racist, feminist approaches for safety, prevention and justice." },
+// 7.png 
+            { title: "Twigted Love", description: "From New York Times bestselling author and BookTok sensation Ana Huang comes a billionaire brother's best friend romance! He has a heart of ice…but for her, he'd burn the world A diverse new adult steamy romance from Tiktok sensation and USA Today bestselling author Ana Huang. Alex Volkov is a devil blessed with the face of an angel and cursed with a past he can't escape. Driven by a tragedy that has haunted him for most of his life, his ruthless pursuits for success and vengeance leave little room for matters of the heart. But when he's forced to look after his best friend's sister, he starts to feel something in his chest: A crack. A melt. A fire that could end his world as he knew it. *** Ava Chen is a free spirit trapped by nightmares of a childhood she can't remember. But despite her broken past, she's never stopped seeing the beauty in the world...including the heart beneath the icy exterior of a man she shouldn't want. Her brother's best friend. Her neighbor. Her savior and her downfall. Theirs is a love that was never supposed to happen-but when it does, it unleashes secrets that could destroy them both...and everything they hold dear. Twisted Love is a contemporary brother's best friend/grumpy sunshine romance. It's book one in the Twisted series but can be read as a standalone." },
+//  8.jpg
+            { title: "Chainsaw Man", description: "Chainsaw Man (チェンソーマン Chensōman?) is a Japanese manga series written and illustrated by Tatsuki Fujimoto. The series is divided into two parts, the Public Safety Saga and the Academy Saga. The Public Safety Saga, which contains 97 chapters, follows Denji as the main protagonist. The ongoing Academy Saga introduces a new main protagonist, Asa Mitaka. Serialization of the Public Safety Saga began on December 3, 2018 and concluded on December 14, 2020. An anime adaptation by studio MAPPA adapted the first part of the series up to the Katana Man arc in its first season." },
+//  9.jpg
+            { title: "Uglies", description: "Uglies is a science fiction novel by Scott Westerfeld. It is set in a future post-scarcity dystopian world in which cosmetic surgery is mandatory at the age of 16 to become 'pretty'. It centers around teenager Tally Youngblood who rebels against society's enforced conformity after her newfound friends Shay and David show her the downsides to becoming a Pretty. Written for young adults, Uglies deals with adolescent themes of both emotional and physical change, and dealing with the revelation that 'some of what you're taught isn't true, your parents are flawed human beings, and the world isn’t constructed for your benefit.' The book is the first installment in what was originally a trilogy, The Uglies series, which includes Pretties and Specials and, the companion novel, Extras." },
+// 10.jpg
+            { title: "Trust", description: "Even through the roar and effervescence of the 1920s, everyone in New York has heard of Benjamin and Helen Rask. He is a legendary Wall Street tycoon; she is the daughter of eccentric aristocrats. Together, they have risen to the very top of a world of seemingly boundless wealth—all as a decade of excess and speculation draws to an end. But at what cost have they acquired their immense fortune? This is the mystery at the center of Bonds, a successful 1937 novel that all of New York seems to have read. Yet there are other versions of this tale of privilege and deceit. Hernan Diaz's TRUST elegantly puts these competing narratives into conversation with one another—and in tension with the perspective of one woman bent on disentangling fact from fiction. The result is a novel that spans over a century and becomes more exhilarating with each new revelation. At once an immersive story and a brilliant literary puzzle, TRUST engages the reader in a quest for the truth while confronting the deceptions that often live at the heart of personal relationships, the reality-warping force of capital, and the ease with which power can manipulate facts." },
+//  11.jpg
+            { title: "Heart Stopper", description: "Boy meets boy. Boys become friends. Boys fall in love. The bestselling LGBTQ+ graphic novel about life, love, and everything that happens in between: this is the fourth volume of HEARTSTOPPER, for fans of The Art of Being Normal, Holly Bourne and Love, Simon. Charlie didn't think Nick could ever like him back, but now they're officially boyfriends. Charlie's beginning to feel ready to say those three little words: I love you. Nick's been feeling the same, but he's got a lot on his mind - not least coming out to his dad, and the fact that Charlie might have an eating disorder. As summer turns to autumn and a new school year begins, Charlie and Nick are about to learn a lot about what love means. Heartstopper is about love, friendship, loyalty and mental illness. It encompasses all the small stories of Nick and Charlie's lives that together make up something larger, which speaks to all of us. This is the fourth volume of Heartstopper, which has now been optioned for television by See-Saw Films." },
+//  12.jpg
+            { title: "The Fellowship Of The Rings", description: "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them. In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose." }
+
+        ];
+ 
+        function searchBook() {
+
+            const query = document.getElementById("searchBox").value.toLowerCase();
+
+            const result = books.find(book => book.title.toLowerCase() === query);
+
+            const output = result ? `"${result.title}" is available!` : "Book not found.";
+
+            document.getElementById("searchResult").innerText = output;
+
+        }
+ 
+     
+function searchBook() {
+    const query = document.getElementById("searchBox").value.toLowerCase();
+    
+    if (!query.trim()) return; // If search is empty, do nothing
+    
+    const elements = document.querySelectorAll("h1, h2, p, a, button"); // Searchable elements
+    let found = false;
+
+    elements.forEach(element => {
+        const text = element.innerText.toLowerCase();
+        if (text.includes(query)) {
+            element.style.backgroundColor = "yellow"; // Highlight found text
+            found = true;
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+            element.style.backgroundColor = ""; // Reset if not found
+        }
+    });
+
+    if (!found) {
+        alert("No matches found.");
+    }
+}
+
+        function showDescription(index) {
+
+            document.getElementById("popupTitle").innerText = books[index].title;
+
+            document.getElementById("popupDescription").innerText = books[index].description;
+
+            document.getElementById("popup").classList.remove("hidden");
+
+        }
+ 
+        function closePopup() {
+
+            document.getElementById("popup").classList.add("hidden");
+
+        }
+</script>
+</body>
+</html>
+
+ 
