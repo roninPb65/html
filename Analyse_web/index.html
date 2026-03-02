@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Data Analyzer</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0e27;
+            --secondary: #1a1f3a;
+            --accent: #00ff88;
+            --accent-dim: #00cc6a;
+            --text: #e8e9f3;
+            --text-dim: #9ca3af;
+            --border: #2d3351;
+            --error: #ff4d6d;
+            --warning: #ffb703;
+            --success: #06ffa5;
+            --bg-card: #13172e;
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .app {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: 0;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-top: 0.5rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease;
+            animation-fill-mode: both;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .step-indicator {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-family: 'IBM Plex Mono', monospace;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        /* Upload Zone */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 4rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--accent);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .upload-zone.dragover {
+            border-color: var(--accent);
+            background: rgba(0, 255, 136, 0.1);
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .upload-text {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-hint {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: var(--primary);
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Archivo', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--secondary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+        }
+
+        td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.875rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Archivo', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: var(--border);
+            border-color: var(--accent);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Visualizations */
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .viz-card {
+            background: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .viz-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .viz-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 255, 136, 0.3);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Alert */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .alert-error {
+            background: rgba(255, 77, 109, 0.1);
+            border: 1px solid var(--error);
+            color: var(--error);
+        }
+
+        .alert-success {
+            background: rgba(6, 255, 165, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+
+        /* Button Group */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        /* Info Badge */
+        .info-badge {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Code block */
+        .code-block {
+            background: var(--primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const API_URL = 'http://localhost:5000/api';
+
+        function App() {
+            const [step, setStep] = useState(1);
+            const [file, setFile] = useState(null);
+            const [preview, setPreview] = useState(null);
+            const [loading, setLoading] = useState(false);
+            const [error, setError] = useState(null);
+            const [cleaningOptions, setCleaningOptions] = useState({
+                handle_missing: 'none',
+                remove_duplicates: false,
+                handle_outliers: 'none'
+            });
+            const [dependentVar, setDependentVar] = useState('');
+            const [independentVars, setIndependentVars] = useState([]);
+            const [results, setResults] = useState(null);
+
+            const handleFileUpload = async (selectedFile) => {
+                if (!selectedFile) return;
+
+                setLoading(true);
+                setError(null);
+
+                const formData = new FormData();
+                formData.append('file', selectedFile);
+
+                try {
+                    const response = await fetch(`${API_URL}/upload`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        setFile(selectedFile);
+                        setPreview(data.preview);
+                        setStep(2);
+                    } else {
+                        setError(data.error);
+                    }
+                } catch (err) {
+                    console.log(err);
+                    setError('Failed to upload file: ' + err.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const handleClean = async () => {
+                setLoading(true);
+                setError(null);
+
+                try {
+                    const response = await fetch(`${API_URL}/clean`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(cleaningOptions)
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        setPreview(data.preview);
+                        setStep(3);
+                    } else {
+                        setError(data.error);
+                    }
+                } catch (err) {
+                    console.log(err);
+                    setError('Failed to clean data: ' + err.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const handleAnalyze = async () => {
+                if (!dependentVar) {
+                    setError('Please select a dependent variable');
+                    return;
+                }
+
+                setLoading(true);
+                setError(null);
+
+                try {
+                    const response = await fetch(`${API_URL}/analyze`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            dependent_var: dependentVar,
+                            independent_vars: independentVars
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        setResults(data);
+                        setStep(4);
+                    } else {
+                        setError(data.error);
+                    }
+                } catch (err) {
+                    console.log(err);
+                    setError('Failed to analyze data: ' + err.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const handleDownload = async () => {
+                try {
+                    const response = await fetch(`${API_URL}/download`, {
+                        method: 'POST'
+                    });
+
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'cleaned_data.csv';
+                    a.click();
+                } catch (err) {
+                    console.log(err);
+                    setError('Failed to download data: ' + err.message);
+                }
+            };
+
+            const toggleIndependentVar = (varName) => {
+                setIndependentVars(prev => 
+                    prev.includes(varName) 
+                        ? prev.filter(v => v !== varName)
+                        : [...prev, varName]
+                );
+            };
+
+            return (
+                <div className="app">
+                    <div className="bg-grid"></div>
+                    
+                    <div className="content">
+                        <header className="header">
+                            <div className="logo">
+                                <div className="logo-icon">📊</div>
+                            </div>
+                            <h1>Universal Data Analyzer</h1>
+                            <p className="subtitle">Upload, Clean, Analyze - All in One Place</p>
+                        </header>
+
+                        {error && (
+                            <div className="alert alert-error">
+                                <span>⚠️</span>
+                                <span>{error}</span>
+                            </div>
+                        )}
+
+                        {/* Step 1: Upload */}
+                        {step >= 1 && (
+                            <div className="card">
+                                <div className="card-header">
+                                    <div className="card-icon">📁</div>
+                                    <h2 className="card-title">Upload Dataset</h2>
+                                    <span className="step-indicator">STEP 1</span>
+                                </div>
+
+                                <div 
+                                    className="upload-zone"
+                                    onClick={() => document.getElementById('fileInput').click()}
+                                    onDragOver={(e) => {
+                                        e.preventDefault();
+                                        e.currentTarget.classList.add('dragover');
+                                    }}
+                                    onDragLeave={(e) => {
+                                        e.currentTarget.classList.remove('dragover');
+                                    }}
+                                    onDrop={(e) => {
+                                        e.preventDefault();
+                                        e.currentTarget.classList.remove('dragover');
+                                        const droppedFile = e.dataTransfer.files[0];
+                                        handleFileUpload(droppedFile);
+                                    }}
+                                >
+                                    <div className="upload-icon">☁️</div>
+                                    <div className="upload-text">
+                                        {file ? `✓ ${file.name}` : 'Click to upload or drag and drop'}
+                                    </div>
+                                    <div className="upload-hint">
+                                        Supports CSV, Excel, JSON (max 100MB)
+                                    </div>
+                                </div>
+
+                                <input 
+                                    type="file" 
+                                    id="fileInput"
+                                    accept=".csv,.xlsx,.xls,.json"
+                                    onChange={(e) => handleFileUpload(e.target.files[0])}
+                                />
+
+                                {loading && step === 1 && (
+                                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                                        <div className="spinner"></div>
+                                        <p style={{ marginTop: '1rem', color: 'var(--text-dim)' }}>
+                                            Uploading and processing...
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Step 2: Clean */}
+                        {step >= 2 && preview && (
+                            <div className="card">
+                                <div className="card-header">
+                                    <div className="card-icon">🧹</div>
+                                    <h2 className="card-title">Data Cleaning</h2>
+                                    <span className="step-indicator">STEP 2</span>
+                                </div>
+
+                                <div className="stats-grid">
+                                    <div className="stat-card">
+                                        <div className="stat-label">Rows</div>
+                                        <div className="stat-value">{preview.shape[0].toLocaleString()}</div>
+                                    </div>
+                                    <div className="stat-card">
+                                        <div className="stat-label">Columns</div>
+                                        <div className="stat-value">{preview.shape[1]}</div>
+                                    </div>
+                                    <div className="stat-card">
+                                        <div className="stat-label">Numeric</div>
+                                        <div className="stat-value">{preview.numeric_cols.length}</div>
+                                    </div>
+                                    <div className="stat-card">
+                                        <div className="stat-label">Categorical</div>
+                                        <div className="stat-value">{preview.categorical_cols.length}</div>
+                                    </div>
+                                </div>
+
+                                <div className="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                {preview.columns.map(col => (
+                                                    <th key={col}>
+                                                        {col}
+                                                        {preview.missing[col] > 0 && (
+                                                            <span className="info-badge">
+                                                                {preview.missing[col]} missing
+                                                            </span>
+                                                        )}
+                                                    </th>
+                                                ))}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {preview.head.slice(0, 5).map((row, idx) => (
+                                                <tr key={idx}>
+                                                    {preview.columns.map(col => (
+                                                        <td key={col}>{String(row[col] ?? '')}</td>
+                                                    ))}
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                {step === 2 && (
+                                    <>
+                                        <div className="form-group">
+                                            <label>Handle Missing Values</label>
+                                            <select 
+                                                value={cleaningOptions.handle_missing}
+                                                onChange={(e) => setCleaningOptions({
+                                                    ...cleaningOptions, 
+                                                    handle_missing: e.target.value
+                                                })}
+                                            >
+                                                <option value="none">Keep as is</option>
+                                                <option value="drop">Drop rows with missing values</option>
+                                                <option value="mean">Fill with mean (numeric)</option>
+                                                <option value="median">Fill with median (numeric)</option>
+                                                <option value="mode">Fill with mode (all types)</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label>Handle Outliers</label>
+                                            <select 
+                                                value={cleaningOptions.handle_outliers}
+                                                onChange={(e) => setCleaningOptions({
+                                                    ...cleaningOptions, 
+                                                    handle_outliers: e.target.value
+                                                })}
+                                            >
+                                                <option value="none">Keep all values</option>
+                                                <option value="remove">Remove outliers (IQR method)</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                <input 
+                                                    type="checkbox"
+                                                    checked={cleaningOptions.remove_duplicates}
+                                                    onChange={(e) => setCleaningOptions({
+                                                        ...cleaningOptions, 
+                                                        remove_duplicates: e.target.checked
+                                                    })}
+                                                />
+                                                Remove duplicate rows
+                                            </label>
+                                        </div>
+
+                                        <div className="btn-group">
+                                            <button 
+                                                className="btn" 
+                                                onClick={handleClean}
+                                                disabled={loading}
+                                            >
+                                                {loading ? <><span className="spinner"></span> Cleaning...</> : '🧹 Clean Data'}
+                                            </button>
+                                            <button 
+                                                className="btn btn-secondary" 
+                                                onClick={() => setStep(3)}
+                                            >
+                                                Skip Cleaning →
+                                            </button>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Step 3: Select Variables */}
+                        {step >= 3 && preview && (
+                            <div className="card">
+                                <div className="card-header">
+                                    <div className="card-icon">🎯</div>
+                                    <h2 className="card-title">Select Variables</h2>
+                                    <span className="step-indicator">STEP 3</span>
+                                </div>
+
+                                <div className="form-group">
+                                    <label>Dependent Variable (Target)</label>
+                                    <select 
+                                        value={dependentVar}
+                                        onChange={(e) => setDependentVar(e.target.value)}
+                                    >
+                                        <option value="">-- Select Variable --</option>
+                                        {preview.columns.map(col => (
+                                            <option key={col} value={col}>{col}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <div className="form-group">
+                                    <label>Independent Variables (Predictors)</label>
+                                    <div className="checkbox-group">
+                                        {preview.columns
+                                            .filter(col => col !== dependentVar)
+                                            .map(col => (
+                                                <div 
+                                                    key={col} 
+                                                    className="checkbox-item"
+                                                    onClick={() => toggleIndependentVar(col)}
+                                                >
+                                                    <input 
+                                                        type="checkbox"
+                                                        checked={independentVars.includes(col)}
+                                                        onChange={() => {}}
+                                                    />
+                                                    <span>{col}</span>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+
+                                {step === 3 && (
+                                    <div className="btn-group">
+                                        <button 
+                                            className="btn" 
+                                            onClick={handleAnalyze}
+                                            disabled={loading || !dependentVar}
+                                        >
+                                            {loading ? <><span className="spinner"></span> Analyzing...</> : '📊 Analyze Data'}
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* Step 4: Results */}
+                        {step >= 4 && results && (
+                            <>
+                                <div className="card">
+                                    <div className="card-header">
+                                        <div className="card-icon">📈</div>
+                                        <h2 className="card-title">Statistical Results</h2>
+                                        <span className="step-indicator">RESULTS</span>
+                                    </div>
+
+                                    {results.statistics.descriptive[dependentVar] && (
+                                        <>
+                                            <h3 style={{ marginBottom: '1rem' }}>Descriptive Statistics</h3>
+                                            <div className="stats-grid">
+                                                {Object.entries(results.statistics.descriptive[dependentVar]).map(([key, value]) => (
+                                                    <div key={key} className="stat-card">
+                                                        <div className="stat-label">{key}</div>
+                                                        <div className="stat-value">{value.toFixed(2)}</div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
+
+                                    {Object.keys(results.statistics.tests).length > 0 && (
+                                        <>
+                                            <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Statistical Tests</h3>
+                                            <div className="table-container">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Relationship</th>
+                                                            <th>Test</th>
+                                                            <th>Statistic</th>
+                                                            <th>P-Value</th>
+                                                            <th>Significant?</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {Object.entries(results.statistics.tests).map(([key, test]) => (
+                                                            <tr key={key}>
+                                                                <td>{key.replace('_vs_', ' vs ')}</td>
+                                                                <td>{test.test}</td>
+                                                                <td>{test.statistic.toFixed(4)}</td>
+                                                                <td>{test.p_value.toFixed(4)}</td>
+                                                                <td>
+                                                                    <span style={{ 
+                                                                        color: test.p_value < 0.05 ? 'var(--success)' : 'var(--error)' 
+                                                                    }}>
+                                                                        {test.p_value < 0.05 ? '✓ Yes' : '✗ No'}
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </>
+                                    )}
+
+                                    <div className="btn-group">
+                                        <button className="btn" onClick={handleDownload}>
+                                            💾 Download Cleaned Data
+                                        </button>
+                                        <button 
+                                            className="btn btn-secondary" 
+                                            onClick={() => {
+                                                setStep(1);
+                                                setFile(null);
+                                                setPreview(null);
+                                                setResults(null);
+                                                setDependentVar('');
+                                                setIndependentVars([]);
+                                            }}
+                                        >
+                                            🔄 Start Over
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {results.visualizations && results.visualizations.length > 0 && (
+                                    <div className="card">
+                                        <div className="card-header">
+                                            <div className="card-icon">📊</div>
+                                            <h2 className="card-title">Visualizations</h2>
+                                        </div>
+
+                                        <div className="viz-grid">
+                                            {results.visualizations.map((viz, idx) => (
+                                                <div key={idx} className="viz-card">
+                                                    <div className="viz-title">{viz.title}</div>
+                                                    <img src={viz.image} alt={viz.title} />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
